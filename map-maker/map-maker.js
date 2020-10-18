@@ -41,9 +41,7 @@ const addMaterialSelector = config => {
   let materialSelector = document.getElementById("materialSelector");
   let div = document.createElement("div");
   div.style.backgroundColor = config.bgcolor;
-  // div.style.cssText = "display:inline-block;margin:10px;";
   let label = document.createElement("label");
-  // label.style.cssText = "border-bottom:10px solid " + config.bgcolor;
   let input = document.createElement("input");
   input.type = "radio";
   input.id = config.name.replace(" ", "_");
@@ -51,7 +49,6 @@ const addMaterialSelector = config => {
   input.value = config.material;
   input.addEventListener("click", () => {
     currentMaterial = config.material;
-    grid.style.borderColor = config.bgcolor;
     div.classList.add('selected');
     if(selected != null) {
       selected.classList.remove('selected');
