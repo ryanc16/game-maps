@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <script src="../maps.js" defer></script>
+    <link rel="stylesheet" href="./map-maker.css">
+  </head>
+  <body onload="buildMapSelector()">
+    <div class="flex-row mb-3">
+      <div class="col-3 side-panel">
+        <label>Preset:</label>
+        <select id="levelSelector" class="mb-3" onchange="loadMap(this.value)">
+          <option value="-1">Select Map Preset</option>
+          <option value="-2">Empty 10x10</option>
+        </select>
+        <p>Selected Material:</p>
+        <div id="materialSelector"></div>
+      </div>
+      <div class="col-9 map-editor">
+        <div class="wrapper">
+          <div class="flex-row center">
+            <button onclick="addRowTop()">+Row</button>
+          </div>
+          <div class="flex-row center">
+            <button onclick="addColLeft()">+Col</button>
+            <div id="grid"></div>
+            <button onclick="addColRight()">+Col</button>
+          </div>
+          <div class="flex-row center">
+            <button onclick="addRowBottom()">+Row</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <button id="compile">Compile Map</button>
+      <pre id="output"></pre>
+    </div>
+    <script src="./map-maker.js" type="text/javascript"></script>
+  </body>
+</html>
